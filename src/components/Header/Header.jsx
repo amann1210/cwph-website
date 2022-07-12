@@ -1,7 +1,22 @@
 import "./Header.css";
 import { Navbar, Container, Nav } from "react-bootstrap";
+import { useState } from "react";
+import { signOut } from 'firebase/auth';
+import { auth } from '../../firebase-config';
 
 const Header = () => {
+
+  const [isAuth,setIsAuth] = useState(localStorage.getItem("isAuth"));
+  
+  const signUserOut = () =>{
+    signOut(auth).then(() => {
+      localStorage.clear();
+      setIsAuth(false);
+      window.location.pathname = "/login";
+    });
+  };
+
+
   return (
     //  Header
     <header className="background-header">
@@ -28,6 +43,11 @@ const Header = () => {
               <Nav.Link href="/about" style={{ fontWeight: "bold" }}>
                 About Us
               </Nav.Link>
+              {isAuth ? <Nav.Link href="/login" onClick={signUserOut} style={{ fontWeight: "bold" }}>
+                Log out
+              </Nav.Link> : <Nav.Link href="/login"  style={{ fontWeight: "bold" }}>
+                Login
+              </Nav.Link> }
             </Nav>
           </Navbar.Collapse>
         </Container>

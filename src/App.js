@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch ,Route } from "react-router-dom";
 import HomePage from "./components/HomePage/HomePage";
 import Activities from "./components/Activities/Activities";
 import Team from "./components/Team/Team";
@@ -9,6 +9,7 @@ import ContactUs from "./components/ContactUs/ContactUs";
 import About from "./components/About/About";
 import Developers from "./components/Developers/Developers";
 import ActivityDetails from './components/Activity-Details/ActivityDetails'
+import Login from './components/Login/Login'
 
 function App() {
   return (
@@ -37,6 +38,9 @@ function App() {
             </Route>
             <Route exact path="/activities/:id">
               <ActivityDetails />
+            </Route>
+            <Route exact path="/login" >
+              <Login />
             </Route>
           </Switch>
         </Router>
