@@ -3,18 +3,27 @@ import { auth , provider } from '../../firebase-config'
 import { signInWithPopup } from 'firebase/auth'
 import { useNavigate } from 'react-router-dom'
 import { Tab, Tabs, Fade } from "react-bootstrap";
+import { Redirect } from "react-router-dom";
+import { useEffect } from "react";
 import "./Login.css";
 
-function Login({setIsAuth}) {
+function Login({setIsAuth,isAuth}) {
     
+
 //   const navigate = useNavigate();
   const signInWithGoogle = () => {
       signInWithPopup(auth,provider).then((result) => {
           localStorage.setItem("isAuth",true);
           setIsAuth(true);
-        //   navigate("/");
+          return <Redirect to = "/"/>
       });
   };
+
+  useEffect(() =>{
+    if (!isAuth){
+      <Redirect to = "/"/>
+    }
+  },[])
   
   return(
       <div className="page-heading header-text about-image">

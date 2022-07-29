@@ -43,6 +43,12 @@ const Header = () => {
               <Nav.Link href="/about" style={{ fontWeight: "bold" }}>
                 About Us
               </Nav.Link>
+
+              <Nav.Link href="/discussion" style={{ fontWeight: "bold" }}>
+                Discussion 
+              </Nav.Link>
+
+              
               {isAuth ? <Nav.Link href="/login" onClick={signUserOut} style={{ fontWeight: "bold" }}>
                 Log out
               </Nav.Link> : <Nav.Link href="/login"  style={{ fontWeight: "bold" }}>

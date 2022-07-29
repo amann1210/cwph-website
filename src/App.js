@@ -10,6 +10,8 @@ import About from "./components/About/About";
 import Developers from "./components/Developers/Developers";
 import ActivityDetails from './components/Activity-Details/ActivityDetails'
 import Login from './components/Login/Login'
+import Discussion from "./components/Discussion/Discussion.jsx";
+import { auth } from "./firebase-config";
 
 function App() {
   return (
@@ -42,6 +44,11 @@ function App() {
             <Route exact path="/login" >
               <Login />
             </Route>
+
+            <Route exact path="/discussion" >
+              <Discussion  />
+            </Route>
+
           </Switch>
         </Router>
       </div>
