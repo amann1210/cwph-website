@@ -2,9 +2,14 @@ import "./HomePage.css";
 import WellnessCards from "./WellnessCards";
 import Quotes from "../Quotes/Quotes";
 import CountDownTimer from "../Timer/Timer";
+import { useEffect, useState } from 'react'
+import { Redirect } from "react-router-dom";
 
 const HomePage = () => {
   const year = new Date().getFullYear();
+
+  
+
   return (
     <div>
       <div className="banner">
@@ -15,9 +20,13 @@ const HomePage = () => {
                 className="header-text caption"
                 style={{ background: "transparent" }}
               >
-                <h1 className="welcome">
+                <h1 className="welcome" onClick={xyz=>{
+                  <Redirect to="/" />
+                }}>
                   Welcome to Center For Wellness and Positive Health
                 </h1>
+
+                
                 {/* <div className="description">
                   When you are joyful, when you say yes to life and have fun and
                   project positivity all around you, you become a sun in the center

@@ -1,10 +1,10 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch ,Route, Link } from "react-router-dom";
-import HomePage from "./components/HomePage/HomePage";
-import Activities from "./components/Activities/Activities";
-import Team from "./components/Team/Team";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import { BrowserRouter as Router, Switch ,Route } from "react-router-dom";
+  import HomePage from "./components/HomePage/HomePage";
+  import Activities from "./components/Activities/Activities";
+  import Team from "./components/Team/Team";
+  import Header from "./components/Header/Header";
+  import Footer from "./components/Footer/Footer";
 import ContactUs from "./components/ContactUs/ContactUs";
 import About from "./components/About/About";
 import Developers from "./components/Developers/Developers";
@@ -12,11 +12,15 @@ import ActivityDetails from './components/Activity-Details/ActivityDetails'
 import Login from './components/Login/Login'
 import Discussion from "./components/Discussion/Discussion";
 import { auth } from "./firebase-config";
+import { useState } from "react";
+import { useEffect } from "react";
 
 function App() {
+
+  let [IsAuth,setIsAuth] = useState(false) 
   return (
     <div>
-      <Header />
+      <Header IsAuth = {IsAuth} SetIsAuth = {setIsAuth}/>
       <div>
         <Router>
           <Switch>
@@ -42,7 +46,7 @@ function App() {
               <ActivityDetails />
             </Route>
             <Route exact path="/login" >
-              <Login />
+              <Login setIsAuth = {setIsAuth} />
             </Route>
 
             <Route exact path="/discussion" >

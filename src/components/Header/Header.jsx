@@ -3,16 +3,41 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import { useState } from "react";
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase-config';
+import { getAuth,onAuthStateChanged } from "firebase/auth";
 
-const Header = () => {
+function Header(props) {
 
-  const [isAuth,setIsAuth] = useState(localStorage.getItem("isAuth"));
+  // const auth = getAuth();
+// const user = auth.currentUser;
+
+
+
+const auth = getAuth();
+
+ let [ui,setui] = useState(false)
+onAuthStateChanged(auth, (user) => {
+  console.log("State is changed")
+  if(user){
+    setui(true)
+    // console.log(user)
+    console.log(ui)
+  }
+  else{
+    
+    setui(false )
+    console.log(ui)
+  }
+});
+
+
+
   
-  const signUserOut = () =>{
+  const signUserOut = () => {
     signOut(auth).then(() => {
-      localStorage.clear();
-      setIsAuth(false);
-      window.location.pathname = "/login";
+      props.SetIsAuth(false);
+      // console.log(user)
+      // ui = false;
+      window.location.assign("/login");
     });
   };
 
@@ -45,21 +70,41 @@ const Header = () => {
               </Nav.Link>
 
               <Nav.Link href="/discussion" style={{ fontWeight: "bold" }}>
-                Discussion 
+                Discussion
               </Nav.Link>
 
-              
-              {isAuth ? <Nav.Link href="/login" onClick={signUserOut} style={{ fontWeight: "bold" }}>
-                Log out
-              </Nav.Link> : <Nav.Link href="/login"  style={{ fontWeight: "bold" }}>
-                Login
-              </Nav.Link> }
+               
+               {/* {{ this.CheckStatus()}} */}
+               
+             
+
+ { ui?
+  <Nav.Link href="/login" onClick={signUserOut} style={{ fontWeight: "bold" }}>
+  Logout
+</Nav.Link>
+:<Nav.Link href="/login" style={{ fontWeight: "bold" }}>
+  Login
+</Nav.Link>
+}
+
+  {/* if(uid){
+    <Nav.Link href="/login" onClick={signUserOut} style={{ fontWeight: "bold" }}>
+  Log out
+</Nav.Link> 
+  }
+  else{
+    <Nav.Link href="/login" onClick={signUserOut} style={{ fontWeight: "bold" }}>
+    Logout
+  </Nav.Link>
+  } */}
+
+
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
     </header>
   );
-};
+}
 
 export default Header;

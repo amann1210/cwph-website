@@ -1,14 +1,27 @@
 .discussion-image{
-  background-image: url("https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+  background-image: url("https://cdn.pixabay.com/photo/2020/01/06/21/36/letter-4746345_1280.jpg");
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size:cover;
   text-align: center;
-  padding: 160px 0px 180px 0px;
+  padding: 180px 0px 160px 0px;
+  height: 50%;
+  /* border: 2px solid #ccc; */
+  
+  border-color: aqua;
   position: relative;
   top: -10px;
-
+  width: 100%;
 }
+html,body {
+  height: 100%;
+  width: 100%;
+  margin:0;
+  padding:0;
+  overflow-x:hidden;
+  overflow-y:auto;
+ }
+
 .hhh{
   height: 20px;
   /* background-color: red; */
@@ -32,39 +45,70 @@
 
 .post2{
  position: relative;
- left : 160px;
- width: 1000px;
+ left : 10%;
+ width: 50%;
 }
 .text-area-container
 {   
-    padding: 50px 0;
-    width: 40%;
-    height: 60px;
-    margin-bottom: 8px;
+    
+  /* box-sizing: border-box; */
+  border: 2px white;
+  border-radius: 4px;
+  background: transparent;
+  background-color: rgb(250, 250, 250);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 7.5%;
+  
+  padding: 50px 0;
+    width: 50%;
+    height: 5%;
+    /* margin-bottom: 8px;
     margin-top: 8px;
-    margin-left: 40px;
-    margin-right: 20px;
+    margin-left: 3%;
+    margin-right: 3%; */
     align-content: center;
-    margin: 0 auto;
+    /* margin: 0 auto;  */
     text-align: center;
     position: relative;
-    left: 30%;
-    top: 40px;
-    overflow-y: visible;
+    left: 25%;
+    /* top: 5%; */
+    margin-top: 5%;
+    overflow-y: auto;
     /* border: 1px solid rgb(107, 114, 12); */
 }
+
 .comment-name-continaer{
+
     margin-right: 20px;
     font-size: 20px;
-    color: rgb(59, 130, 246);
+    color: black;
     align-items: center;
-    padding-left : 10%;
+    padding-left : 7.5%;
     font-size: large;
+    font-weight: 500;
+    font-family: Roboto, Arial, sans-serif;
+    /* margin-top: -20px; */
 }
 .comment-comment-container{
+ 
     font-size: 18px;
     align-items: center;
-    padding-left: 15%;
+    padding-left: 7.5%;
+    margin-bottom: 10px;
+    font-family: Roboto, Arial, sans-serif;
+    margin-right: 0px;
+    padding-right: 5%;
+    
+}
+
+.comment-reply-container{
+
+  font-size: 15px;
+  align-items: center;
+  padding-left: 7.5%;
+  margin-bottom: 2.5px;
+  font-family: Roboto, Arial, sans-serif;
+  padding-right: 7.5%;
 
 }
 .comment-image-container {
@@ -74,41 +118,63 @@
   }
   
   .comment-name-continaer img {
-    margin-right: 20px;
+    margin-top: 12.5px;
+    margin-right: 10px;
     border-radius: 50px;
     align-content: center;
     text-align: center;
     width: 35px;
+    
   }
   .comment-name-continaer-reply {
+
+    font-family: Roboto, Arial, sans-serif;
     margin-right: 20px;
     font-size: 20px;
-    color: rgb(59, 130, 246);
+    color: black;
     align-items: center;
-    padding-left : 10%;
+    padding-left : 7.5%;
     font-size: 15px;
+    margin-bottom: 5px;
     
   }
   .comment-name-continaer-reply img{
-    margin-right: 20px;
+    margin-top: 5px;
+    margin-right: 10px;
     border-radius: 50px;
     align-content: center;
     text-align: center;
-    width: 35px;
+    width: 25px;
   }
   .but-div{
     /* top: 5%; */
-    padding-top: 1%;
+    /* padding-top: 1%; */
+    margin-top: 5px;
     padding-right: 5px;
     padding-bottom: 30px;
     position: relative;
     left: 18%;
+    display: flex;
+    justify-content: space-between;
+    max-width: 200px;
+    padding: 10px 0;
+    border-radius: 60%;
   }
+  .but-div button{
+    border-radius: 8px;     
+  }
+ 
   .post{
-    position: relative;
-    left: 315px;
+
+    margin-left: 60%;
+    background-color: transparent;
+    border: none;
+    resize: none;
+    outline: none;
+    margin-top: 4%;
+    
   }
-  .comment-buttonn{
+  .comment-buttonn {
     position: relative;
     top: 50px;
     margin-bottom: 10px;
@@ -118,24 +184,44 @@
     align-self: center;
     align-content: center;
     text-align: center; 
-
+    border-radius: 10%;
+    border-color: blue;
+    border-width: 10%;
   }
+
+  .comment-buttonn button{
+    border-radius: 12px;
+  }
+
   .comment-button{
     margin-bottom: 10px;
-    margin-top: 8px;
+    margin-top: 0px;
     margin-left: 20px;
     margin: 0 auto;
     align-self: center;
     align-content: center;
     text-align: center; 
+    /* background-color: transparent; */
+    background-color: transparent;
+    border: none;
+    resize: none;
+    outline: none;
 
+  }
+
+  .comment-button button{
+    border-radius: 8px;
   }
 
   .time{
     font-size: small;
     position: relative;
-    left: 90px;
+    left: 50px;
+
+    margin-top: -17.5px;
+    margin-bottom: 7.5px;
     color: grey;
+    
   }
   .reply{
     position: relative;
@@ -145,11 +231,23 @@
     position: relative;
     left: 250px;
     margin-left: 100px;
+    border-radius: 50%;
+  }
+  .homepage{
+    width: 600px;
+    height: auto; 
+    background-color: rgb(250, 250, 250);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    margin-left: 26%;
+
   }
   .area{
     padding: 30px 0;
-    width: 40%;
-    height: 20px;
+    width: 160%;
+    height: 30px;
     margin-bottom: 8px;
     margin-top: 8px;
     margin-left: 40px;
@@ -158,6 +256,17 @@
     margin: 0 auto;
     text-align: center;
     position: relative;
-    left: 15%;
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
     /* border: 1px solid rgb(107, 114, 12); */
+  }
+  .time-reply{
+    font-size: small;
+    position: relative;
+    left: 40px;
+    margin-top: -7.5px;
+    /* margin-bottom: 7.5px; */
+    color: grey;
   }
