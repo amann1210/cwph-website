@@ -38,6 +38,9 @@ let Discussion = () => {
         let data = await getDocs(commentCollectionRef);
         data = (data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
         data.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+        data = data.filter((data)=>{
+            return data.comment.length != 0
+        })
         console.log(data);
         setDiscussions(data);
  };
@@ -47,7 +50,7 @@ let Discussion = () => {
         let replys = await getDocs(replyCollectionRef);
         replys = replys.docs.map((reply) => ({ ...reply.data(), id: reply.id }));
         replys = replys.filter((reply) => {
-            return reply.pid == commentId
+            return reply.pid == commentId && reply.reply.length != 0
         }).sort((c, d) => new Date(c.createdAt).getTime() - new Date(d.createdAt).getTime());
 
         // console.log(replys);
@@ -80,13 +83,24 @@ let Discussion = () => {
         getComments();
     };
 
-    let handleOnChange = (e) => {
-        if (!e.target.value) {
-            console.log('empty')
-          }
-          else
-        setComment(e.target.value);
-    }
+    // let handleOnChange = (e) => {
+    //     if (!e.target.value) {
+    //         console.alert('empty')
+    //       }
+    //       else
+    //     setComment(e.target.value);
+    // }
+
+    const handleClick = event => {
+        event.preventDefault();
+    
+        if (message.trim().length == 0) {
+          console.log('input value is empty');
+        } 
+        else{
+            setComment(e.target.value);
+        }
+      };
 
     let postReplyHandler = async (pid) => {
         setIsReplying(null);
@@ -148,21 +162,25 @@ let Discussion = () => {
                     isReplying == discussion.id ? <div>
                         <div className='post2'>
                             <textarea className='area' value={reply} onChange={(e) => setReply(e.target.value)} placeholder='Reply Something' /><br />
-                            <button className='post' onClick={() => postReplyHandler(discussion.id)}>Post Reply</button><br /><br />
+                            <button className='post' onClick={() => postReplyHandler(discussion.id)}>Post</button>
+                            <button onClick={() => {
+                            setIsReplying(null);
+                        }}className='post_cancel'><u>Cancel</u></button>
                         </div>
                     </div> : null
                 }
                 <div className='but-div'>
                     {
-                        isReplying == discussion.id ? <button onClick={() => {
-                            setIsReplying(null);
-                        }} className='comment-button'>Close Reply</button> : <button onClick={() => {
+                        isReplying == discussion.id ? null : <div><button onClick={() => {
                             setIsReplying(discussion.id);
                         }} className='comment-button'>Reply</button>
+                        <button className='comment-button' onClick={() => viewReplyHandler(discussion.id)
+                        
+                    }>View Reply</button></div>
 
                     }
 
-                    <button className='comment-button' onClick={() => viewReplyHandler(discussion.id)}>View Reply</button>
+                    
                 </div>
             </div>
             )
@@ -200,13 +218,16 @@ let Discussion = () => {
                 <div className='but-div'>
 
 
-                    <button onClick={() => {
-                        setIsReplying(discussion.id);
-                    }} className='comment-button'>Reply</button>
+                   
 
                     {
                         isViewingReply == discussion.id ? <button className='comment-button' onClick={() => viewReplyHandler(null)}>Close View</button> :
-                            <button className='comment-button' onClick={() => viewReplyHandler(discussion.id)}>View Reply</button>
+                           <div>
+                             <button className='comment-button' onClick={() => viewReplyHandler(discussion.id)}>View Reply</button>
+                             <button onClick={() => {
+                        setIsReplying(discussion.id);
+                    }} className='comment-button'>Reply</button>
+                    </div>
                     }
                 </div>
             </div>
@@ -317,7 +338,7 @@ let Discussion = () => {
                 
         <div>
         
-            <textarea className='text-area-container' value={comment} onChange={handleOnChange} placeholder='Place your comments here!' />
+            <textarea className='text-area-container' value={comment}  onclick ={handleClick} placeholder='Place your comments here!' />
         </div>
         <div className='comment-buttonn '><button onClick={postcomment}> Comment </button></div><br /><br /><br />
 

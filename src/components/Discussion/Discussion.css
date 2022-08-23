@@ -172,7 +172,18 @@ html,body {
     resize: none;
     outline: none;
     margin-top: 4%;
+    margin-right: 2%;
     
+  }
+  .post_cancel{
+    border-radius: 25%;
+    left: 3%;
+    position:relative;
+    border: none;
+    resize: none;
+    outline: none;
+    
+
   }
   .comment-buttonn {
     position: relative;
