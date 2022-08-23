@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch ,Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch ,Route, Link } from "react-router-dom";
 import HomePage from "./components/HomePage/HomePage";
 import Activities from "./components/Activities/Activities";
 import Team from "./components/Team/Team";
@@ -10,7 +10,7 @@ import About from "./components/About/About";
 import Developers from "./components/Developers/Developers";
 import ActivityDetails from './components/Activity-Details/ActivityDetails'
 import Login from './components/Login/Login'
-import Discussion from "./components/Discussion/Discussion.jsx";
+import Discussion from "./components/Discussion/Discussion";
 import { auth } from "./firebase-config";
 
 function App() {
