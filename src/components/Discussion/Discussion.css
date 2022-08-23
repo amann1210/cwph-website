@@ -1,1 +1,163 @@
+.discussion-image{
+  background-image: url("https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding: 160px 0px 180px 0px;
+  position: relative;
+  top: -10px;
 
+}
+.hhh{
+  height: 20px;
+  /* background-color: red; */
+  z-index: 1;
+}
+.text p {
+  font-size: 15px;
+}
+.reg{
+  margin-left: 4px;
+  color: grey;
+}
+.good{
+  margin-right: 4px ;
+  font-size: 15px;
+}
+.dis-img{
+  position: relative;
+  /* top: -4px; */
+}
+
+.post2{
+ position: relative;
+ left : 160px;
+ width: 1000px;
+}
+.text-area-container
+{   
+    padding: 50px 0;
+    width: 40%;
+    height: 60px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    margin-left: 40px;
+    margin-right: 20px;
+    align-content: center;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    left: 30%;
+    top: 40px;
+    overflow-y: visible;
+    /* border: 1px solid rgb(107, 114, 12); */
+}
+.comment-name-continaer{
+    margin-right: 20px;
+    font-size: 20px;
+    color: rgb(59, 130, 246);
+    align-items: center;
+    padding-left : 10%;
+    font-size: large;
+}
+.comment-comment-container{
+    font-size: 18px;
+    align-items: center;
+    padding-left: 15%;
+
+}
+.comment-image-container {
+  border-radius: 3px;
+    margin-right: 12px;
+    align-content: center;
+  }
+  
+  .comment-name-continaer img {
+    margin-right: 20px;
+    border-radius: 50px;
+    align-content: center;
+    text-align: center;
+    width: 35px;
+  }
+  .comment-name-continaer-reply {
+    margin-right: 20px;
+    font-size: 20px;
+    color: rgb(59, 130, 246);
+    align-items: center;
+    padding-left : 10%;
+    font-size: 15px;
+    
+  }
+  .comment-name-continaer-reply img{
+    margin-right: 20px;
+    border-radius: 50px;
+    align-content: center;
+    text-align: center;
+    width: 35px;
+  }
+  .but-div{
+    /* top: 5%; */
+    padding-top: 1%;
+    padding-right: 5px;
+    padding-bottom: 30px;
+    position: relative;
+    left: 18%;
+  }
+  .post{
+    position: relative;
+    left: 315px;
+  }
+  .comment-buttonn{
+    position: relative;
+    top: 50px;
+    margin-bottom: 10px;
+    margin-top: 8px;
+    margin-left: 20px;
+    margin: 0 auto;
+    align-self: center;
+    align-content: center;
+    text-align: center; 
+
+  }
+  .comment-button{
+    margin-bottom: 10px;
+    margin-top: 8px;
+    margin-left: 20px;
+    margin: 0 auto;
+    align-self: center;
+    align-content: center;
+    text-align: center; 
+
+  }
+
+  .time{
+    font-size: small;
+    position: relative;
+    left: 90px;
+    color: grey;
+  }
+  .reply{
+    position: relative;
+    left: 50px;
+  }
+  .but-divv{
+    position: relative;
+    left: 250px;
+    margin-left: 100px;
+  }
+  .area{
+    padding: 30px 0;
+    width: 40%;
+    height: 20px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    margin-left: 40px;
+    margin-right: 20px;
+    align-content: center;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    left: 15%;
+    /* border: 1px solid rgb(107, 114, 12); */
+  }
